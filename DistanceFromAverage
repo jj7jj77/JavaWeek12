@@ -1,0 +1,36 @@
+package javaclassweek12;
+import java.util.Scanner;
+public class DistanceFromAverage 
+{
+    public static void main(String[] args) 
+    {
+        double [] Ar = new double [20]; //make array of 20 doubles //AR for array
+        
+        Scanner input = new Scanner(System.in);
+        int i = 0;   //read in first input //i is a the index
+        int size = 0;//variable size
+        System.out.print("Enter a grade (99999 to stop): ");    //prompt
+        double grade = input.nextDouble();  //read in first item
+        
+        double sum = 0;   //average  
+        
+        while (grade != 99999 && size <20)   //has to be a while loop // if not 9999,keep going
+        {
+            Ar [i] = grade;
+            sum += grade;  //add the grade to sum
+            i++;
+            size++;
+            System.out.print("Enter a grade (99999 to stop): ");    //prompt
+            grade = input.nextDouble();
+        }
+        System.out.println("The sume is  " + sum);   //printed the sum
+        double average = sum / size;   //to get the average
+        System.out.println("The average is " + average);
+        
+        // distance from the average
+        for (i=0; i<size; i++)
+        {
+            System.out.println("Difference is " + (Ar[i] - average));   //Ar - average
+        }
+    }
+}
